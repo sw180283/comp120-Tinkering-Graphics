@@ -20,4 +20,23 @@ Start test:
 ##Notes for next part:
 I want the code to make the picture move up and then down, and repeat, as one part of its animation.
 I also want to add in some rotation and the copyInto of more pictures.
+
+After trying this, the function didn't work, so I attempted to use a source and target function.
+
+##Start Code
+>pic=makeAPicture(pickAFile())
+
+>canvas=makeEmptyPicture(400,400)
+
+>targetX=100
+
+>for sourceX in range(0,getWidth(pic)):
+> targetY=200
+> for sourceY in range(0,getHeight(pic)):
+>  color=getColor(getPixel(pic,sourceX,sourceY))
+>  targetY=targetY+1
+>#target the next pixel
+> targetX=targetX-1
+>show(pic)
+>show(canvas)
   
