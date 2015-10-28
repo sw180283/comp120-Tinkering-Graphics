@@ -24,19 +24,19 @@ I also want to add in some rotation and the copyInto of more pictures.
 After trying this, the function didn't work, so I attempted to use a source and target function.
 
 ##Start Code
->pic=makeAPicture(pickAFile())
+>pic=makeAPicture(pickAFile())  
 
->canvas=makeEmptyPicture(400,400)
+>canvas=makeEmptyPicture(400,400)  
 
->targetX=100
+>targetX=100  
 
->for sourceX in range(0,getWidth(pic)):
-> targetY=200
-> for sourceY in range(0,getHeight(pic)):
->  color=getColor(getPixel(pic,sourceX,sourceY))
->  targetY=targetY+1
->#target the next pixel
-> targetX=targetX-1
->show(pic)
->show(canvas)
-  
+>for sourceX in range(0,getWidth(pic)):  
+> targetY=200  
+> for sourceY in range(0,getHeight(pic)):  
+>  color=getColor(getPixel(pic,sourceX,sourceY)) 
+>  setColor(getPixel(canvas,targetX, targetY), color)  
+>  targetY=targetY+1  
+> #target the next pixel  
+> targetX=targetX-1  
+>show(pic)  
+>show(canvas)  
