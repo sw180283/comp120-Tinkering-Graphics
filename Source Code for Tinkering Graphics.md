@@ -3,11 +3,11 @@ View raw for indentation.
 
 ##Source Code:
   
-  > def movePict2():
-    src=makePicture("g.jpg")
-    canvas=makeEmptyPicture(1000,1000)
-    show(canvas)
-    targetX=400
+  > def movePict2():  
+    src=makePicture("g.jpg")  
+    canvas=makeEmptyPicture(1000,1000)  
+    show(canvas)  
+    targetX=400  
 
     for move in range (0,4):
   
