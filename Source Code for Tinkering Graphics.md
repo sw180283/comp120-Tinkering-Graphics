@@ -3,6 +3,41 @@ View raw for indentation.
 
 ##Source Code:
 
+def movePict2():
+  src=makePicture("g.jpg")
+  canvas=makeEmptyPicture(1000,1000)
+  show(canvas)
+  targetX=400
+
+  for move in range (0,4):
+  
+    for i in range(0,4):
+
+      targetY=400   
+      for sourceY in range (0,getHeight(src)):
+        targetX=400
+      
+        for sourceX in range (0,getWidth(src)):
+          color=getColor(getPixel(src,sourceX,sourceY))
+          setColor(getPixel(canvas,targetX,targetY-i*14),color)
+          targetX=targetX+1
+        targetY=targetY+1
+      repaint(canvas)
+    
+    for down in range (0,4):
+      targetY=400-4*14
+      for sourceY in range (0,getHeight(src)):
+        targetX=400
+      
+        for sourceX in range (0,getWidth(src)):
+          color=getColor(getPixel(src,sourceX,sourceY))
+          setColor(getPixel(canvas,targetX,targetY+down*14),color)
+          targetX=targetX+1
+        targetY=targetY+1
+      repaint(canvas)
+
+##Testing:
+
 Start test:
 
 >def makeNewWorld():  
