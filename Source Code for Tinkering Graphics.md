@@ -4,34 +4,44 @@ View raw for indentation.
 ##Source Code:
   
   > def movePict2():  
-    src=makePicture("g.jpg")  
+    src=makePicture(pickAFile())  
     canvas=makeEmptyPicture(1000,1000)  
     show(canvas)  
-    targetX=400  
+    //#This makes a canvas for the picture to be placed so that it can be moved up and down  
 
     for move in range (0,4):
   
       for i in range(0,4):
+      //#This is the up movement
 
-       targetY=400   
+       targetY=400  
+       //#This is the placement of the canvas in the y-axis
        for sourceY in range (0,getHeight(src)):
           targetX=400
+          //#This is the placement of the canvas in the x-axis
       
           for sourceX in range (0,getWidth(src)):
             color=getColor(getPixel(src,sourceX,sourceY))
+            //#Get the color of the picture
             setColor(getPixel(canvas,targetX,targetY-i*14),color)
+            //#This controls the up movement
+            //#Set the canvas to the picture colour
             targetX=targetX+1
           targetY=targetY+1
         repaint(canvas)
+        //#Select the next pixel in the canvas and repaint
     
     for down in range (0,4):
+    //#This is the down movement
       targetY=400-4*14
+      //#This is the end point of the up movement
       for sourceY in range (0,getHeight(src)):
         targetX=400
       
         for sourceX in range (0,getWidth(src)):
           color=getColor(getPixel(src,sourceX,sourceY))
           setColor(getPixel(canvas,targetX,targetY+down*14),color)
+          //#This controls the down movement
           targetX=targetX+1
         targetY=targetY+1
       repaint(canvas)
@@ -72,6 +82,6 @@ After trying this, the function didn't work, so I attempted to use a source and 
 >  setColor(getPixel(canvas,targetX, targetY), color)  
 >  targetY=targetY+1  
 > #target the next pixel  
-> targetX=targetX-1  
+> targetX=targetX+1  
 >show(pic)  
 >show(canvas)  
