@@ -26,7 +26,7 @@ PROGRAM PowerUpHealth:
     Change image displayed
   ENDWHILE
     
-  Repeat until user presses esc
-  Close program
+  IF user presses esc
+    Close program
 
 END.
