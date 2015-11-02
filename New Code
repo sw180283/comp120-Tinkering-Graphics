@@ -1,0 +1,27 @@
+def makeImage2():
+  pic=makePicture(pickAFile())
+  picHeight=getHeight(pic)
+  #getting the picture height helps alignment
+  
+  canvasHeight=500
+  #the canvas is square so the width is the same as the height
+  canvas=makeEmptyPicture(canvasHeight,canvasHeight, black)
+ 
+  show(canvas)
+  
+  targetX=(canvasHeight-picHeight)/2
+  targetY=targetX
+  
+  number=4
+  
+  for loop in range (0,number):
+    
+    maxHeight=40
+    
+    for up in range (0,maxHeight):
+      copyInto(pic, canvas, targetX, targetY-up)
+      repaint(canvas)
+                
+    for down in range (0,maxHeight):
+      copyInto(pic, canvas, targetX, targetY-maxHeight+down)
+      repaint(canvas)
